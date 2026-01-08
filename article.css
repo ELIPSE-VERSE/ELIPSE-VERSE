@@ -1,0 +1,141 @@
+/* article.css */
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body background with animated gradient */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #f0f0f0;
+  line-height: 1.7;
+}
+
+/* Header with centered designer heading */
+header {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowPulse 3s ease-in-out infinite, slideDown 1s ease;
+}
+
+/* Navigation bar below heading */
+nav {
+  margin-top: 20px;
+  animation: fadeIn 2s ease;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #00c6ff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #c3cd0d;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Main content area */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.summary {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease;
+}
+
+/* Section headings */
+h2 {
+  margin-top: 30px;
+  font-size: 1.6em;
+  color: #00c6ff;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.8s ease forwards;
+}
+
+p {
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.8s ease forwards;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+  border-top: 1px solid #444;
+  margin-top: 60px;
+  animation: fadeIn 2s ease;
+}
+
+/* Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 10px #00c6ff, 0 0 20px #0072ff; }
+  50% { text-shadow: 0 0 20px #00c6ff, 0 0 40px #0072ff; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}

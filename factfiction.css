@@ -1,0 +1,195 @@
+:root{
+  --bg: #071021;
+  --panel: #0f1724;
+  --muted: #9fb6c9;
+  --brand-a: #6ee7ff;
+  --brand-b: #ff6ec7;
+  --accent: #ffd166;
+  --ok: #7ef0b6;
+  --danger: #ff6b6b;
+  --glass: rgba(255,255,255,0.03);
+  --card-radius: 14px;
+  --shadow: 0 12px 40px rgba(2,6,23,0.6);
+  --mono: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--mono);
+  background:
+    radial-gradient(600px 300px at 10% 10%, rgba(110,231,255,0.03), transparent 8%),
+    radial-gradient(500px 250px at 90% 90%, rgba(255,110,199,0.02), transparent 8%),
+    var(--bg);
+  color:#dbeafe;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-y:auto;
+  padding-bottom:40px;
+}
+
+/* Back button */
+.wb-back{
+  position:absolute;
+  top:18px;
+  left:18px;
+  z-index:40;
+  background:linear-gradient(90deg,var(--brand-a),var(--brand-b));
+  color:#041021;
+  border:none;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 8px 30px rgba(110,231,255,0.12);
+  transition:transform .14s ease, box-shadow .14s ease, opacity .12s ease;
+}
+.wb-back:hover{transform:translateY(-3px)}
+.wb-back:active{transform:translateY(1px)}
+.wb-back:focus{outline:2px solid rgba(110,231,255,0.12);outline-offset:3px}
+
+/* Root layout */
+.wb-root{max-width:1100px;margin:80px auto;padding:28px}
+.wb-header{text-align:center;margin-bottom:18px}
+.wb-title{
+  margin:0;
+  font-size:3rem;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--brand-a),var(--brand-b));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:0.02em;
+  text-shadow:0 6px 30px rgba(110,231,255,0.04);
+  transition:transform .3s ease;
+}
+.wb-title:hover{transform:translateY(-4px) scale(1.01)}
+.wb-tag{margin:8px 0 0;color:var(--muted);font-size:0.95rem}
+
+/* Stage grid */
+.wb-stage{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:28px;
+  align-items:start;
+}
+
+/* Card */
+.wb-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--card-radius);
+  padding:26px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--glass);
+  position:relative;
+  overflow:hidden;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.wb-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(2,6,23,0.7)}
+.wb-card::after{
+  content:"";
+  position:absolute;
+  inset: -40% -40% auto auto;
+  width:420px;height:420px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(110,231,255,0.06), transparent 20%),
+    radial-gradient(circle at 80% 80%, rgba(255,110,199,0.04), transparent 20%);
+  transform: rotate(12deg);
+  pointer-events:none;
+}
+
+/* Statement display */
+.wb-scrambled{
+  font-size:2.2rem;
+  font-weight:900;
+  letter-spacing:0.02em;
+  text-align:center;
+  color:var(--brand-a);
+  background: linear-gradient(90deg, rgba(110,231,255,0.03), transparent);
+  padding:22px;
+  border-radius:12px;
+  margin-bottom:10px;
+  transition:transform .18s ease, color .18s ease, box-shadow .18s ease;
+  box-shadow: inset 0 -6px 30px rgba(2,6,23,0.25);
+}
+.wb-scrambled.reveal{color:var(--accent); box-shadow: inset 0 -6px 40px rgba(255,209,102,0.06); transform:scale(1.02)}
+
+/* Subtext */
+.wb-sub{font-size:0.95rem;color:var(--muted);text-align:center;margin-top:8px}
+
+/* Form */
+.wb-form{display:grid;grid-template-columns:1fr auto auto;gap:10px;margin-top:18px;align-items:center}
+.wb-input{
+  padding:12px 14px;border-radius:10px;border:1px solid var(--glass);background:transparent;color:var(--text);
+  font-size:1rem;outline:none;transition:box-shadow .12s ease, border-color .12s ease;
+}
+.wb-input::placeholder{color:rgba(203,213,225,0.35)}
+.wb-input:focus{box-shadow:0 6px 24px rgba(110,231,255,0.06);border-color:rgba(110,231,255,0.18)}
+.wb-btn{
+  padding:12px 14px;border-radius:10px;border:none;font-weight:800;cursor:pointer;letter-spacing:0.02em;
+  transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.wb-btn:active{transform:translateY(1px)}
+.wb-btn-primary{
+  background:linear-gradient(90deg,var(--brand-a),var(--brand-b));
+  color:#041021;
+  box-shadow:0 10px 30px rgba(110,231,255,0.12);
+}
+.wb-btn-ghost{
+  background:transparent;border:1px solid var(--glass);color:var(--muted);
+}
+
+/* Feedback */
+.wb-feedback{min-height:28px;text-align:center;font-weight:700;margin-top:12px}
+.wb-feedback.ok{color:var(--ok);animation:pop .28s ease}
+.wb-feedback.no{color:var(--accent);animation:shake .28s ease}
+.wb-feedback.time{color:var(--danger);animation:shake .28s ease}
+
+/* Controls */
+.wb-controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
+
+/* Side */
+.wb-side{display:flex;flex-direction:column;gap:18px}
+.wb-stats{display:flex;flex-direction:column;gap:12px}
+.stat{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,0.02)}
+.stat .label{font-size:0.85rem;color:var(--muted);margin-bottom:6px}
+.stat .value{font-weight:800;color:var(--brand-a);font-size:1.2rem}
+
+/* Help */
+.wb-help{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+.wb-help h3{margin:0 0 8px;color:var(--brand-a)}
+.wb-help ul{margin:0;padding-left:18px;color:var(--muted)}
+.wb-help li{margin:6px 0}
+
+/* Footer */
+.wb-footer{text-align:center;margin-top:28px;color:var(--muted);font-size:0.9rem}
+
+/* Utilities */
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+/* Extra animations */
+@keyframes pop{0%{transform:scale(.96);opacity:0}50%{transform:scale(1.02);opacity:1}100%{transform:scale(1)}}
+@keyframes shake{0%{transform:translateX(-6px)}25%{transform:translateX(6px)}50%{transform:translateX(-4px)}75%{transform:translateX(4px)}100%{transform:translateX(0)}}
+
+/* Floating accent orbs */
+.wb-card::before{
+  content:"";
+  position:absolute;
+  inset:auto auto -20% -20%;
+  width:260px;height:260px;
+  background: radial-gradient(circle at 30% 30%, rgba(110,231,255,0.04), transparent 20%), radial-gradient(circle at 70% 70%, rgba(255,110,199,0.03), transparent 20%);
+  transform: rotate(-8deg);
+  pointer-events:none;
+  filter:blur(18px);
+  opacity:0.9;
+  transition:opacity .4s ease;
+}
+
+/* Responsive */
+@media (max-width:880px){
+  .wb-stage{grid-template-columns:1fr;gap:18px}
+  .wb-root{margin:60px 16px}
+  .wb-scrambled{font-size:1.8rem}
+  .wb-form{grid-template-columns:1fr auto;grid-auto-rows:auto}
+}

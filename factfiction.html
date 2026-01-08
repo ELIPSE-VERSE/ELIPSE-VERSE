@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fact or Fiction — Elipse Verse</title>
+  <link rel="stylesheet" href="factfiction.css" />
+</head>
+<body>
+  <button class="wb-back" id="backBtn" aria-label="Back to games">← Back</button>
+
+  <main class="wb-root" id="app">
+    <header class="wb-header">
+      <h1 class="wb-title">Fact or Fiction</h1>
+      <div class="wb-tag">Knowledge at the speed of AI</div>
+    </header>
+
+    <section class="wb-stage">
+      <!-- Main game card -->
+      <div class="wb-card" id="gameCard" aria-live="polite">
+        <div class="wb-scrambled" id="statementBox">Loading statement…</div>
+        <div class="wb-sub" id="subText">Decide whether the statement is Fact or Fiction</div>
+
+        <form class="wb-form" id="answerForm" onsubmit="return false;">
+          <input
+            id="hiddenInput"
+            class="wb-input visually-hidden"
+            aria-hidden="true"
+            autocomplete="off"
+          />
+
+          <button type="button" class="wb-btn wb-btn-primary" id="factBtn" aria-pressed="false">Fact</button>
+          <button type="button" class="wb-btn wb-btn-ghost" id="fictionBtn" aria-pressed="false">Fiction</button>
+        </form>
+
+        <div class="wb-feedback" id="feedback" role="status" aria-live="polite"></div>
+
+        <div class="wb-controls" id="controls">
+          <button class="wb-btn wb-btn-ghost" id="nextBtn">Next</button>
+          <button class="wb-btn wb-btn-ghost" id="revealBtn">Reveal</button>
+          <button class="wb-btn wb-btn-ghost" id="resetBtn">Reset</button>
+        </div>
+      </div>
+
+      <!-- Side panel -->
+      <aside class="wb-side">
+        <div class="wb-card wb-stats" aria-hidden="false">
+          <div class="stat">
+            <div class="label">Score</div>
+            <div class="value" id="score">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Streak</div>
+            <div class="value" id="streak">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Time</div>
+            <div class="value" id="timer">30s</div>
+          </div>
+        </div>
+
+        <div class="wb-card wb-help" id="howTo">
+          <h3>How to play</h3>
+          <ul>
+            <li>Decide if the statement is Fact or Fiction.</li>
+            <li>30 seconds per statement — faster answers earn more points.</li>
+            <li>Correct streaks boost your score multiplier.</li>
+            <li>Use Reveal to show the answer (small penalty).</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="wb-footer">© 2026 Elipse Verse — Knowledge at the speed of AI</footer>
+  </main>
+
+  <script src="factfiction.js"></script>
+</body>
+</html>

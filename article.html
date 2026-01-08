@@ -1,0 +1,56 @@
+<!-- article.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Elipse Verse — Article</title>
+  <link rel="stylesheet" href="article.css">
+</head>
+<body>
+  <header>
+    <h1>Elipse Verse</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="title"></h2>
+    <div id="summary" class="summary"></div>
+    <div id="sections"></div>
+  </main>
+
+  <footer>
+    © 2026 Elipse Verse — Knowledge at the speed of AI
+  </footer>
+
+  <script src="article.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug") || "global-warming";
+
+    const article = articles[slug];
+
+    if (article) {
+      document.getElementById("title").innerText = article.title;
+      document.getElementById("summary").innerText = article.summary;
+
+      const container = document.getElementById("sections");
+      article.sections.forEach(sec => {
+        const h2 = document.createElement("h2");
+        h2.innerText = sec.heading;
+        const p = document.createElement("p");
+        p.innerText = sec.content;
+        container.appendChild(h2);
+        container.appendChild(p);
+      });
+    } else {
+      document.getElementById("title").innerText = "Article not found";
+    }
+  </script>
+</body>
+</html>

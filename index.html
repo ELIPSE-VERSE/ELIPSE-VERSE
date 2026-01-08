@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elipse Verse — Knowledge at the speed of AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Display + UI fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <header class="site-header">
+  <div class="brand-wrap">
+    <img src="logo.png" alt="Elipse Verse Logo" class="logo" />
+    <h1 class="brand">
+      <span class="brand-text">Elipse Verse</span>
+    </h1>
+  </div>
+</header>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="games.html">Games</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Search">
+      <p class="hero-tag">Knowledge at the speed of AI</p>
+      <div class="search">
+        <input id="searchInput" class="search-input" type="text" placeholder="Search any topic…" aria-label="Search input" />
+        <button id="searchBtn" class="search-btn" aria-label="Search">Search</button>
+      </div>
+    </section>
+
+    <section class="highlights" aria-label="Highlights">
+      <article class="card">
+        <h3 class="card-title">Random Curiosity</h3>
+        <p id="curiosityText" class="card-text">Loading…</p>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Trending Topics</h3>
+        <ul id="trendingList" class="card-list">
+          <li>Doraemon</li>
+          <li>Artificial Intelligence</li>
+          <li>Bitcoin</li>
+        </ul>
+      </article>
+
+      <article class="card">
+  <h3 class="card-title">Quick Quiz</h3>
+  <div id="quizBox" class="quiz">
+    <!-- Question text will be injected here -->
+    <p id="quizQuestion" class="quiz-q">Loading question...</p>
+
+    <!-- Answer options will be injected here -->
+    <div id="quizOptions" class="quiz-options"></div>
+
+    <!-- Result feedback -->
+    <p id="quizResult" class="quiz-result" aria-live="polite"></p>
+  </div>
+</article>
+<br>
+<footer class="site-footer">
+  <p class="footer-tagline">Elipse Verse —Knowledge at the speed of AI</p>
+  <nav class="footer-links">
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</footer>
+</body>
+  <script src="script.js"></script>
+</body>
+</html>

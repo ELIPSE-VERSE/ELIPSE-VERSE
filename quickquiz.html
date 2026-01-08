@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Quiz Challenge — Elipse Verse</title>
+  <link rel="stylesheet" href="quickquiz.css" />
+</head>
+<body>
+  <button class="wb-back" id="backBtn">← Back</button>
+
+  <main class="wb-root">
+    <header class="wb-header">
+      <h1 class="wb-title">Quick Quiz Challenge</h1>
+      <div class="wb-tag">Knowledge at the speed of AI</div>
+    </header>
+
+    <section class="wb-stage">
+      <!-- Game card -->
+      <div class="wb-card" id="quizCard">
+        <div class="wb-scrambled" id="questionBox">Loading question…</div>
+        <div class="wb-sub">Choose the correct answer</div>
+
+        <form class="wb-form" id="optionsForm" onsubmit="return false;">
+          <!-- Options injected here -->
+        </form>
+
+        <div class="wb-controls">
+          <button type="button" class="wb-btn wb-btn-primary" id="submitBtn">Submit</button>
+          <button type="button" class="wb-btn wb-btn-ghost" id="nextBtn">Next</button>
+          <button type="button" class="wb-btn wb-btn-ghost" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="wb-feedback" id="feedback"></div>
+      </div>
+
+      <!-- Side panel -->
+      <aside class="wb-side">
+        <div class="wb-card wb-stats">
+          <div class="stat">
+            <div class="label">Score</div>
+            <div class="value" id="score">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Streak</div>
+            <div class="value" id="streak">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Time</div>
+            <div class="value" id="timer">30s</div>
+          </div>
+        </div>
+
+        <div class="wb-card wb-help">
+          <h3>How to play</h3>
+          <ul>
+            <li>Answer each multiple-choice question within 30 seconds.</li>
+            <li>Correct answers earn points — faster answers earn more.</li>
+            <li>Wrong answers deduct 5 points and move to the next question.</li>
+            <li>Streaks increase your score multiplier.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+ <footer class="about-footer">
+    <p>© 2026 Elipse Verse —Knowledge at the speed of AI</p>
+  </footer>
+  <script src="quickquiz.js"></script>
+</body>
+</html>

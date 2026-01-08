@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Word Builder — Elipse Verse</title>
+  <link rel="stylesheet" href="wordbuilder.css" />
+</head>
+<body>
+  <button id="wbBack" class="wb-back" aria-label="Back to games">← Back</button>
+
+  <main class="wb-root" id="wbRoot">
+    <header class="wb-header" role="banner">
+      <h1 class="wb-title">Word Builder — Elipse Verse</h1>
+      <p class="wb-tag">Knowledge at the speed of AI</p>
+    </header>
+
+    <section class="wb-stage" aria-labelledby="wbTitle">
+      <article class="wb-card" aria-live="polite">
+        <div class="wb-top">
+          <div id="wbScrambled" class="wb-scrambled" aria-hidden="false">— — —</div>
+          <div class="wb-sub">Unscramble the letters</div>
+        </div>
+
+        <form id="wbForm" class="wb-form" autocomplete="off" novalidate>
+          <label for="wbInput" class="visually-hidden">Type your answer</label>
+          <input id="wbInput" class="wb-input" type="text" placeholder="Type your answer" autocomplete="off" />
+          <button type="submit" class="wb-btn wb-btn-primary">Submit</button>
+          <button type="button" id="wbNext" class="wb-btn wb-btn-ghost">Next</button>
+        </form>
+
+        <div id="wbFeedback" class="wb-feedback" role="status" aria-live="polite"></div>
+
+        <div class="wb-controls">
+          <button id="wbHint" class="wb-btn wb-btn-ghost">Hint</button>
+          <button id="wbReset" class="wb-btn wb-btn-ghost">Reset</button>
+        </div>
+      </article>
+
+      <aside class="wb-side" aria-label="Game stats and help">
+        <div class="wb-stats" role="region" aria-label="Stats">
+          <div class="stat">
+            <div class="label">Score</div>
+            <div id="wbScore" class="value">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Streak</div>
+            <div id="wbStreak" class="value">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Time</div>
+            <div id="wbTime" class="value">30s</div>
+          </div>
+        </div>
+
+        <div class="wb-help" role="region" aria-label="How to play">
+          <h3>How to play</h3>
+          <ul>
+            <li>Unscramble the letters and submit the correct word.</li>
+            <li>30 seconds per word — faster answers earn more points.</li>
+            <li>Use Hint to reveal a letter (small penalty).</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="wb-footer" role="contentinfo">
+      <p>© 2026 Elipse Verse — Knowledge at the speed of AI</p>
+    </footer>
+  </main>
+
+  <script src="wordbuilder.js"></script>
+</body>
+</html>

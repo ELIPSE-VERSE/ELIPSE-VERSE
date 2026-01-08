@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Match — Elipse Verse</title>
+  <link rel="stylesheet" href="memorymatch.css" />
+</head>
+<body>
+  <button class="wb-back" id="backBtn">← Back</button>
+
+  <main class="wb-root">
+    <header class="wb-header">
+      <h1 class="wb-title">Memory Match</h1>
+      <div class="wb-tag">Test your memory skills</div>
+    </header>
+
+    <section class="wb-stage">
+      <!-- Game board -->
+      <div class="wb-card" id="gameBoard"></div>
+
+      <!-- Side panel -->
+      <aside class="wb-side">
+        <div class="wb-card wb-stats">
+          <div class="stat">
+            <div class="label">Moves</div>
+            <div class="value" id="moves">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Matches</div>
+            <div class="value" id="matches">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Time</div>
+            <div class="value" id="timer">0s</div>
+          </div>
+        </div>
+
+        <div class="wb-card wb-help">
+          <h3>Settings</h3>
+          <label for="difficulty">Difficulty:</label>
+          <select id="difficulty">
+            <option value="easy">Easy (4x4)</option>
+            <option value="medium">Medium (6x6)</option>
+            <option value="hard">Hard (8x8)</option>
+          </select>
+          <br/><br/>
+          <label for="theme">Theme:</label>
+          <select id="theme">
+            <option value="fruits">Fruits</option>
+            <option value="animals">Animals</option>
+            <option value="science">Science</option>
+          </select>
+        </div>
+
+        <div class="wb-controls">
+          <button class="wb-btn wb-btn-primary" id="resetBtn">Reset</button>
+        </div>
+      </aside>
+    </section>
+ <footer class="about-footer">
+    <p>© 2026 Elipse Verse —Knowledge at the speed of AI</p>
+  </footer>
+  </main>
+
+  <script src="memorymatch.js"></script>
+</body>
+</html>
