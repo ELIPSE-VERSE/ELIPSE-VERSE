@@ -6,7 +6,6 @@ Elipse Verse is a fast, responsive, AI-powered knowledge universe featuring 201 
 - Fully responsive design (mobile, tablet, desktop)
 - Clean navigation and search bar
 - Optimized for speed and clarity
-- No ads, no distractions — just pure content
 
 ## 🎯 Purpose
 Phase 1 is focused on launching and tracking real user behavior for 3 months. No updates will be made during this period. The goal is to gather traffic data and identify high-performing topics before expanding further.
